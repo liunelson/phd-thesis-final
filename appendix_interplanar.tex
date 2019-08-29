@@ -1,0 +1,47 @@
+
+\chapter{Calculation for the Crystallographic Interplanar Distance}
+\label{ap: interplanar}
+
+The interplanar distance of a family of crystal planes specified by
+Miller indices $h_1, h_2, h_3$ is an important quantity that is at the heart of
+crystallography. It appears most notably in the Laue-Bragg condition for diffraction
+in Section~\ref{sec: UED-cryst}
+as $d_{h_1 h_2 h_3} = 2 \unslant[-.2]\pi/|\boldsymbol{g}|$,
+where $\boldsymbol{g} = \sum \limits_{i = 1}^3 h_i \boldsymbol{b}_i$ is the reciprocal lattice vector
+associated with the scattering vector $\boldsymbol{q}$.
+To calculate $d$ in terms of the lattice parameters
+and the Miller indices is quite tedious. As such,
+following Ref.~\cite{LiuLiu2017},
+the general formulae for $d$ are included here for reference.
+In terms of the parameters of the direct lattice,
+%
+\begin{equation}
+  \begin{aligned}
+    d & = \frac{a_1 a_2 a_3}{h_1 h_2 h_3 |\boldsymbol{N}|} \sqrt{1 - \cos^2 \alpha_{23} - \cos^2 \alpha_{31} - \cos^2 \alpha_{12} + 2 \cos \alpha_{23} \cos \alpha_{31} \cos \alpha_{12}} \\
+  \end{aligned}
+\end{equation}
+%
+where $\boldsymbol{N}$ is a normal vector of the aforementioned crystal plane $(h_1 h_2 h_3)$ and
+%
+\begin{equation}
+  \begin{aligned}
+    \left( \frac{a_1 a_2 a_3}{h_1 h_2 h_3 |\boldsymbol{N}|} \right)^2
+      & = \left( \frac{h_1}{a_1} \right)^2 \sin^2 \alpha_{23} +
+            \left( \frac{h_2}{a_2} \right)^2 \sin^2 \alpha_{31} +
+            \left( \frac{h_3}{a_3} \right)^2 \sin^2 \alpha_{12} \\
+      & \quad - \frac{2 h_2 h_3}{a_2 a_3} \left( \cos \alpha_{23} - \cos \alpha_{31} \cos \alpha_{12} \right) \\
+      & \quad - \frac{2 h_3 h_1}{a_3 a_1} \left( \cos \alpha_{31} - \cos \alpha_{12} \cos \alpha_{23} \right) \\
+      & \quad - \frac{2 h_1 h_2}{a_1 a_2} \left( \cos \alpha_{12} - \cos \alpha_{23} \cos \alpha_{31} \right)
+  \end{aligned}
+\end{equation}
+%
+In terms of the parameters of the reciprocal lattice,
+%
+\begin{equation}
+  \begin{aligned}
+    \frac{1}{d} & = \frac{1}{2 \unslant[-.2]\pi}\sqrt{h_1^2 b_1^2 + h_2^2 b_2^2 + h_3^2 b_3^2 + 2 h_1 h_2 b_1 b_2 \cos \beta_{12} + 2 h_2 h_3 \cos \beta_{23} + 2 h_3 h_1 \cos \beta_{31} }
+  \end{aligned}
+\end{equation}
+%
+where $b_i$ are the length of the reciprocal lattice vectors and $\beta_{ij}$ are the angles inbetween,
+$\cos \beta_{ij} = \frac{|\boldsymbol{b}_i \cdot \boldsymbol{b}_j|}{b_i b_j}$.

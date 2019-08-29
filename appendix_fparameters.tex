@@ -1,0 +1,63 @@
+
+\chapter{Electron Elastic Scattering Factor of Select Elements}
+\label{ap: fparameters}
+
+From Peng~et~al~\cite{Ren1996}, a convenient and robust parameterization
+of the electron elastic scattering factor is given by
+%
+\begin{equation}
+  \begin{aligned}
+    f_Z(\boldsymbol{q}) & = \sum_{n = 1}^6 a_n \mathrm{e}^{- b_n s^2}
+  \end{aligned}
+\end{equation}
+%
+where $4 \unslant[-.2]\pi s = q$ and
+the fitted values for the parameters are tabulated in the two tables here.
+The original values upon which the fitting is performed, with the exception of those for hydrogen,
+are the result of relativistic Hartree-Fock calculations.
+%
+\begin{table}[ht!]
+  \centering
+  \renewcommand*{\arraystretch}{1.5}{
+    \begin{tabular}{ C{1.5cm} C{0.5cm} C{1.4cm} C{1.4cm} C{1.4cm} C{1.4cm} C{1.4cm} }
+      \toprule
+      Element & $Z$ & $a_1$  & $a_2$  & $a_3$  & $a_4$  & $a_5$  \\
+      \midrule
+      H       & 1   & 0.0349 & 0.1201 & 0.1970 & 0.0573 & 0.1195 \\
+      C       & 6   & 0.0893 & 0.2563 & 0.7570 & 1.0487 & 0.3575 \\
+      N       & 7   & 0.1022 & 0.3219 & 0.7982 & 0.8197 & 0.1715 \\
+      O       & 8   & 0.0974 & 0.2921 & 0.6910 & 0.6990 & 0.2039 \\
+      F       & 9   & 0.1083 & 0.3175 & 0.6487 & 0.5846 & 0.1421 \\
+      P       & 15  & 0.2548 & 0.6106 & 1.4541 & 2.3204 & 0.8477 \\
+      S       & 16  & 0.2497 & 0.5628 & 1.3899 & 2.1865 & 0.7715 \\
+      Fe      & 26  & 0.3946 & 1.2725 & 1.7031 & 2.3140 & 1.4795 \\
+      Sb      & 51  & 0.7106 & 1.9247 & 2.6149 & 1.8899 & 3.8322 \\
+      \bottomrule
+    \end{tabular}
+  }
+  \caption{Parameter $a_n$ for $q$ up to $12.6$~\AA$^{-1}$.}
+  \label{tab: fparameters_a}
+\end{table}
+%
+\begin{table}[ht!]
+  \centering
+  \renewcommand*{\arraystretch}{1.5}{
+    \begin{tabular}{ C{1.5cm}  C{0.5cm} C{1.4cm} C{1.4cm} C{1.4cm} C{1.4cm} C{1.4cm} }
+      \toprule
+      Element & $Z$ & $b_1$  & $b_2$  & $b_3$   & $b_4$   & $b_5$   \\
+      \midrule
+      H       & 1   & 0.5347 & 3.5867 & 12.3471 & 18.9525 & 38.6269 \\
+      C       & 6   & 0.2465 & 1.7100 & 6.4094  & 18.6113 & 50.2523 \\
+      N       & 7   & 0.2451 & 1.7481 & 6.1925  & 17.3894 & 48.1431 \\
+      O       & 8   & 0.2067 & 1.3815 & 4.6943  & 12.7105 & 32.4726 \\
+      F       & 9   & 0.2057 & 1.3439 & 4.2788  & 11.3932 & 28.7881 \\
+      P       & 15  & 0.2908 & 1.8740 & 8.5176  & 24.3434 & 63.2996 \\
+      S       & 16  & 0.2681 & 1.6711 & 7.0267  & 19.5377 & 50.3888 \\
+      Fe      & 26  & 0.2717 & 2.0443 & 7.6007  & 29.9714 & 86.2265 \\
+      Sb      & 51  & 0.2562 & 1.9646 & 6.8852  & 24.7648 & 68.9168 \\
+      \bottomrule
+    \end{tabular}
+  }
+  \caption{Parameter $b_n$ for $q$ up to $12.6$~\AA$^{-1}$.}
+  \label{tab: fparameters_b}
+\end{table}

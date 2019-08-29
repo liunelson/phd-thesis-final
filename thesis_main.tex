@@ -1,0 +1,425 @@
+
+% Main LaTeX file for thesis
+
+% Template: ut-thesis
+% \documentclass[12pt, draft]{ut-thesis}
+\documentclass[12pt]{ut-thesis}
+% \documentclass[a4letter,11pt,twoside,openright]{ut-thesis}
+
+% Make page margins visible
+%% \PassOptionsToPackage{showframe}{geometry}
+% \geometry{showframe}
+
+% Table column width control
+% e.g. cx{3cm}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Import packages
+\usepackage{booktabs} % toprule, bottomrule for tables
+\usepackage{graphicx}
+%\usepackage[font=small, format=plain, labelsep=endash, labelfont=bf,up, textfont=it,up]{caption}
+\usepackage[font=small, format=plain, labelsep=endash, labelfont=bf,up, textfont=rm,up]{caption}
+%\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools} % extension of amsmath, used for thermodynamic | limits
+%\usepackage{fixltx2e}
+\usepackage{braket}
+\usepackage[sort]{cite}
+\usepackage{notoccite}
+\usepackage{epigraph}
+\usepackage{CJKutf8} % Chinese characters
+\usepackage{arydshln} % Dashed lines for tables
+%\usepackage{mathrsfs} % Scripted letters for Fourier/Laplace transforms
+\usepackage{multirow} % merge rows in table
+\usepackage{multicol} % multiple columns in page
+
+%\usepackage{layouts} % for value of textwidth in centimeters
+
+% Use \text{} instead of \mathrm{} for text
+
+
+% Unslant font for upright mu/gamma
+\newsavebox{\foobox}
+\newlength{\foodim}
+\newcommand{\slantbox}[2][0]{\mbox{%
+        \sbox{\foobox}{#2}%
+        \foodim=#1\wd\foobox%
+        \hskip \wd\foobox%
+        \hskip -0.5\foodim%
+        \pdfsave%
+        \pdfsetmatrix{1 0 #1 1}%
+        \llap{\usebox{\foobox}}%
+        \pdfrestore%
+        \hskip 0.5\foodim%
+}}
+\newcommand\unslant[2][-.25]{\slantbox[#1]{\(#2\)}}
+% \unslant[-.2]\pi \unslant[-.15]\gamma
+
+% Scripted "r"
+\usepackage{calligra}
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\newcommand{\scriptr}{\mathcalligra{r}\,}
+\newcommand{\bscriptr}{\pmb{\mathcalligra{r}}\,}
+
+% Hyperlinks
+\usepackage[pagebackref = true, hyperfootnotes = false]{hyperref}
+\hypersetup{
+  colorlinks = true,
+  pdfpagelayout = TwoPageLeft,
+  pdftitle = {Chemistry in Action: Making Molecular Movies
+    with Ultrafast Electron Diffraction and Data Science},
+  pdfauthor = {Lai Chung Liu},
+  bookmarks = true,
+  bookmarksnumbered = true,
+  bookmarksopen = true,
+  hyperindex = true,
+  linktoc = page,
+  citecolor = blue,
+  linkcolor = blue,
+}
+%linktocpage = true,
+
+% Back references for footnotes (hyperref is broken for footnotes)
+\usepackage{footnotebackref}
+
+% Adding package bookmark improves bookmarks handling.
+% More features and faster updated bookmarks.
+\usepackage{bookmark}
+
+\usepackage{textcomp} % for interrobang
+
+% Cover info
+\degree{Doctor of Philosophy}
+\department{Physics}
+\gradyear{2019}
+%\author{Lai Chung Liu (\begin{CJK*}{UTF8}{bkai}廖禮中\end{CJK*})}
+\author{Lai Chung Liu}
+\title{Chemistry in Action: Making Molecular Movies with Ultrafast Electron Diffraction and Data Science}
+
+% Set formatting
+\setlength{\emergencystretch}{6pt} % Fix overfull \hbox
+\setcounter{tocdepth}{2} % Set depth of table of content
+% \doublespacing % Double-spacing
+\flushbottom % Make each page fill up the entire page.
+
+% Adjust spacing above and below equations
+%\abovedisplayskip=12pt plus 3pt minus 9pt
+%\belowdisplayskip=12pt plus 3pt minus 9pt
+%\abovedisplayshortskip=0pt plus 3pt
+%\belowdisplayshortskip=7pt plus 3pt minus 4pt
+
+% Impose hyphenation pattern to fix underfull \hbox in bibliography
+\lccode`\(`\(
+\lccode`\)`\)
+\hyphenation{Bis-(hexa-fluoro-phos-phate)}
+\hyphenation{perfluoro-cyclo-pentene}
+\hyphenation{ethylene-dioxy-tetra-thia-fulvalene}
+\hyphenation{beam-width}
+
+% Silence underfull warnings
+\hbadness=10001
+
+% Main document
+\begin{document}
+
+  % Value of \textwidth
+  %\the\textwidth
+  % textwidth in cm: \printinunitsof{cm}\prntlen{\textwidth}
+  % 451.68752 pt = 159.345 mm
+
+  % Set up preliminary sections
+  \begin{preliminary}
+
+    \maketitle % Make title page
+
+    % Force blank page between title page and abstract
+    \cleardoublepage{}
+
+    % Abstract section
+    % (at most 350 words for PhD)
+    \begin{abstract}
+
+      A long-held thought experiment of science is the direct observation of the motions
+      of atoms and molecules as they undergo chemical reactions and phase transitions.
+      The advent of microscopy and diffraction beyond the visible spectrum of light ---
+      using X-rays, electrons, and neutrons --- has since enabled such atomic-level elucidation
+      of the structure of matter in the steady state.
+
+      Recently, time-resolved techniques have finally enabled the making of
+      the titular `molecular movie' on the time scale of chemical physics.
+      %
+      In this thesis, I report on my works which further this quest
+      by using ultrafast electron diffraction and data science to fully resolve
+      the photoinduced structural dynamics of five \emph{large}, \emph{low-symmetry},
+      and \emph{weakly scattering} molecular systems:
+      two Bechgaard-Fabre salts of 4,5-ethylenedioxy-tetrathiafulvalene,
+      a ring-closing diarylethene derivative, and two iron(II)-based spin-crossover complexes.
+
+      Leveraging the ultrabright femtosecond electron source presently available,
+      large overdetermining time-series maps of reciprocal space
+      were measured and structurally refined to track the individual atomic motions
+      that lead to each photoproduct: two transient metallic phases, a ring-closed isomer,
+      and two expanded high-spin states.
+      %
+      In all cases, a dramatic and heretofore unknown reduction in dimensionality was found,
+      whereby the photoinduced structural dynamics is governed by key reaction modes
+      that are much fewer in number than the degrees of freedom expected
+      of the respective molecular systems.
+      %
+      This insight --- along with the experiments and methods presented herein ---
+      should find application in uncovering the physics of reduced dimensionality
+      as a solution to the problem of how chemistry scales with complexity.
+      This work lays the foundation to recast chemistry in terms of
+      reduced reaction modes, unifying structure and dynamics
+      as a new conceptual basis for chemistry.
+
+      % should find application in the making and understanding of future molecular movies of even greater complexity.
+
+    \end{abstract}
+
+    % Force blank page between abstract and acknowledgement
+    \cleardoublepage{}
+
+    % Acknowledgements section
+    \begin{acknowledgements}
+
+      This thesis represents not only my work at the computer workstation and on the lab bench;
+      herein lies also the result of eight and a half years of studying and working in the Department of Physics
+      at the University of Toronto. I am thankful of the University for its institutional support,
+      the department staff (in particular, Krystyna Biel and Theresa Baptista of the Graduate
+      and Undergraduate Offices respectively), and my doctoral supervisory committee members
+      (Profs. Young-June Kim and Erich Poppitz) for their guidance and expertise.
+      I would also like to thank the governments of Canada, Qu\'{e}bec, and Ontario
+      for the generous financial support that they have awarded me
+      through their respective funding agencies:
+      the National Science and Engineering Research Council~(NSERC),
+      the Fonds de recherche du Québec --- Nature et technologies~(FQRNT),
+      and the Ontario Graduate Scholarship~(OGS) program.
+
+      Importantly, I am indebted to my Ph.D. supervisor Prof.~R. J. Dwayne Miller.
+      His contagious enthusiasm and unwavering support propelled me forward
+      while his deep thinking and visionary perspective helped me develop
+      into the well-rounded scientist that I am today.
+      For these things, I offer him my most grateful thoughts.
+
+      Beyond Dwayne, I am thankful for the mentoring offered by Profs. Bradley J. Siwick
+      and Germ\'{a}n Sciaini, J.~Prof.~Dr.~Henrike M. M\"{u}ller-Werkmeister,
+      Drs. Gustavo Moriena, Cheng Lu (\begin{CJK*}{UTF8}{bkai}陸誠\end{CJK*}),
+      Meng Gao (\begin{CJK*}{UTF8}{bkai}高蒙\end{CJK*}), and Hubert Jean-Ruel.
+      When I first met them, I was still an inexperience graduate student.
+      Through their eminent example and extensive experience,
+      I learnt the tricks of the scientific trade which has allowed me
+      to make my own contribution to our research field.
+      In particular, the experiments herein would be impossible
+      without the masterful ultramicrotoming of Dr.~Lu.
+
+      Alongside the many other Miller-ite graduate students in the group,
+      there were the platoon of wonderful postdoctoral fellows.
+      No matter which side of the Atlantic Ocean I am on,
+      I can always rely on their knowledge and expertise.
+      I extend my most sincere thanks to: Profs. Arash Zarrine-Afsar and Amy L. Stevens,
+      and Drs. Francis Talbot and Samansa Maneshi in Toronto;
+      Drs. Gaston Corthey,  Masaki Hada (\begin{CJK*}{UTF8}{bkai}羽田真毅\end{CJK*}),
+      Stuart A. Hayes, Julian Hirscht, G\"{u}nther H. Kassier, Alexander Marx, Kostyantyn Pichugin,
+      and Dongfang Zhang (\begin{CJK*}{UTF8}{bkai}張東方\end{CJK*}) in Hamburg.
+      In particular, I must thank my close friends and labmates Drs. Ryan L. Field,
+      Yifeng Jiang (\begin{CJK*}{UTF8}{bkai}江熠峰\end{CJK*}), and
+      J.~Prof.~Dr.~Henrike M. M\"{u}ller-Werkmeister
+      for making my journey less lonely through their wit and companionship.
+      % It was a privilege for me to work and collaborate with you.
+
+      Furthermore, all of this would not have been possible without the support and encouragement
+      of my family: my father \begin{CJK*}{UTF8}{bkai}廖汝光\end{CJK*},
+      mother \begin{CJK*}{UTF8}{bkai}王慧美\end{CJK*}, sister \begin{CJK*}{UTF8}{bkai}廖鳳詩\end{CJK*},
+      my nieces, \begin{CJK*}{UTF8}{bkai}廖心悠\end{CJK*} and \begin{CJK*}{UTF8}{bkai}廖心穎\end{CJK*},
+      and --- most importantly --- my partner, Herlander D. Pinto.
+
+      Finally, I wish to acknowledge that the research described in this thesis was performed
+      on the land that was known as \emph{Tkaronto} ---
+      the traditional home of the Wendat, Seneca, and Mississauga of the Credit nations.
+      I am grateful to have had this opportunity and hope that the works herein
+      will serve to benefit them along with all other Canadians.
+
+        \vspace{1cm}
+        \begin{figure*}[h!]
+          \raggedleft%
+          \includegraphics[width = 0.2\textwidth]{Figures/name.pdf}
+        \end{figure*}
+        \vspace{-0.5cm}
+        \begin{flushright}
+          Liu Lai Chung%
+          \linebreak%
+          Toronto, Canada%
+          \linebreak%
+          May 23, 2017
+        \end{flushright}
+
+    \end{acknowledgements}
+
+    % Force blank page between acknowledgement and epigraph
+    \cleardoublepage{}
+
+    % Epigraph
+    \newpage
+    \renewcommand{\epigraphflush}{center}
+    \renewcommand{\sourceflush}{flushright}
+    % \setlength\epigraphrule{0pt}
+    \setlength\epigraphwidth{0.6\textwidth}
+    \vspace*{\fill}
+    \epigraph{
+    Because as we know, \\
+    there are known knowns; \\
+    there are things we know we know. \\
+    We also know \\
+    there are known unknowns; \\
+    that is to say we know \\
+    there are some things we do not know. \\
+    But there are also unknown unknowns: \\
+    the ones we don't know we don't know.}%
+    {\vspace{0.25\baselineskip}
+    \textsc{Donald H. Rumsfeld} \\
+    United States Secretary of Defense (2001--2006) \\
+    Department of Defense News Briefing, February~12, 2002}
+
+    % Make table of contents
+    \newpage
+    \pdfbookmark{\contentsname}{toc}
+    \tableofcontents
+
+    % list of tables and figures
+    \listoffigures
+    \addcontentsline{toc}{chapter}{\listfigurename}
+    \listoftables
+    \addcontentsline{toc}{chapter}{\listtablename}
+
+    % Make list of abbreviations
+    \newpage
+    \chapter*{List of Abbreviations}
+    \addcontentsline{toc}{chapter}{List of Abbreviations}
+    %\vspace*{2.52cm}
+    %\hspace*{-0.78cm}
+    %\textbf{{\Huge List of Abbreviations}\\}
+
+    \begin{multicols}{2}
+
+    \begin{tabbing}
+      \hspace*{2.5cm} \= \kill
+      \textbf{AZA} \> [Fe\textsuperscript{II}(PM-AzA)\textsubscript{2}(NCS\textsubscript{2})]\\
+      \textbf{BBO} \> Beta barium borate \\
+      \textbf{BPY} \> [Fe\textsuperscript{II}(bpy)\textsubscript{3}](PF\textsubscript{6})\textsubscript{2}\\
+      \textbf{CCD} \> Charge coupled device \\
+      \textbf{CF} \> Charge flipping \\
+      \textbf{CPA} \> Chirped pulse amplification \\
+      \textbf{CPM} \> Cross phase modulation \\
+      \textbf{CT} \> Charge-Transfer \\
+      \textbf{CWT} \> Continuous wavelet transform \\
+      \textbf{DAE} \> Diarylethene \\
+      \textbf{DAS} \> Decay-associated spectrum \\
+      \textbf{DFT} \> Density functional theory \\
+      \textbf{EDO-TTF} \> Ethylenedioxy- \\
+        \> tetrathiafulvalene\\
+      \textbf{ESA} \> Excited state absorption\\
+      \textbf{EXAFS} \> Extended X-ray absorption \\
+        \> fine structure\\
+      \textbf{FFT} \> Fast Fourier transform \\
+      \textbf{FWHM} \> Full width at half maximum \\
+      \textbf{GLA} \> Global lifetime analysis \\
+      \textbf{GSB} \> Ground state bleach \\
+      \textbf{GUI} \> Graphics user interface \\
+      \textbf{GVD} \> Group velocity dispersion \\
+      \textbf{HOMO} \> Highest occupied molecular \\
+        \> orbital\\
+      \textbf{HS} \> High-spin \\
+      \textbf{HT} \> High-temperature \\
+      \textbf{IC} \> Internal conversion \\
+      \textbf{IM} \> Insulator--metal \\
+      \textbf{IRF} \> Instrument response function\\
+      \textbf{ISC} \> Intersystem crossing\\
+      \textbf{IVR} \> Intramolecular vibrational-energy \\
+        \> relaxation \\
+      \textbf{LIESST} \> Light-induced excited-spin-\\
+        \> state trapping \\
+      \textbf{LS} \> Low-spin \\
+      \textbf{LT} \> Low-temperature \\
+      \textbf{LUMO} \> Lowest unoccupied \\
+        \> molecular orbital\\
+      \textbf{MI} \> Metal--insulator\\
+      \textbf{MLCT} \> Metal--ligand \\
+        \> charge-transfer \\
+      \textbf{PFC} \> 1,2-bis(2,4-dimethyl- \\
+        \> 5-phenyl-3-thienyl) \\
+        \> perfluorocyclopentene \\
+      \textbf{PIPT} \> Photoinduced phase \\
+        \> transition \\
+      \textbf{PSA} \> Product state absorption \\
+      \textbf{REGEN} \> Regenerative amplifier \\
+      \textbf{RF} \> Radio-frequency \\
+      \textbf{RMS} \> Root mean square \\
+      \textbf{ROI} \> Region of interest \\
+      \textbf{SCO} \> Spin crossover \\
+      \textbf{SHG} \> Second harmonic generation \\
+      \textbf{SVD} \> Singular value decomposition \\
+      \textbf{TA} \> Transient absorption \\
+      \textbf{TDMES} \> Time-differential M\"{o}ssbauer \\
+        \> emission spectroscopy \\
+      \textbf{TEM} \> Transmission electron \\
+        \> microscopy\\
+      \textbf{THG} \> Third harmonic generation\\
+      \textbf{TIS} \> Transient intermediate state\\
+      \textbf{Ti:Sapph} \> Titanium-doped sapphire \\
+      \textbf{TMC} \> Transition-metal complex\\
+      \textbf{UED} \> Ultrafast electron diffraction\\
+      \textbf{UV} \> Ultraviolet\\
+      \textbf{Vis} \> Visible\\
+      \textbf{WLG} \> White light generation\\
+      \textbf{WPO} \> Weak phase object\\
+      \textbf{XANES} \> X-ray absorption near-edge \\
+        \> structure\\
+      \textbf{XAS} \> X-ray absorption spectroscopy \\
+      \textbf{XES} \> X-ray emission spectroscopy \\
+      \textbf{XFEL} \> X-ray free electron laser \\
+      \textbf{XRD} \> X-ray diffraction
+    \end{tabbing}
+    \end{multicols}
+
+    % End of the preliminary sections: reset page style and numbering.
+  \end{preliminary}
+
+  \raggedbottom%
+
+  % Include chapter files
+  \include{thesis_chap1}
+  \include{thesis_chap2}
+  \include{thesis_chap3}
+  \include{thesis_chap4}
+  \include{thesis_chap5}
+  \include{thesis_chap6}
+  \include{thesis_chap7}
+
+  % Include appendix files
+  \appendix
+  \include{appendix_intro_timeline}
+  \include{appendix_intro_scales}
+  \include{appendix_cif}
+  \include{appendix_interplanar}
+  \include{appendix_MottBethe}
+  \include{appendix_fparameters}
+  \include{appendix_exPHH}
+  \include{appendix_CFT}
+  \include{appendix_termsymbols}
+  \include{appendix_SCO}
+  \include{appendix_SCO_exc}
+  \include{appendix_SCO_BPY}
+  \include{appendix_permissions}
+
+
+  % Bibliography section
+  \addcontentsline{toc}{chapter}{Bibliography} % Add bibliography to table of content
+  \bibliographystyle{ieeetr} % IEEE style
+  \bibliography{thesis_biblio} % Bibliography file
+
+\end{document}

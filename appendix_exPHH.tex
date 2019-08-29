@@ -1,0 +1,60 @@
+
+\chapter{The Extended Peierls-Holstein-Hubbard Model}
+\label{ap: exPHH}
+
+In Refs.~\cite{Ung1994, Clay2003, Seo2004, Yonemitsu2007, Onda2008} and others, it is shown that
+a theoretical model can be constructed to reproduce the Coulombically-unfavourable $(1001)$ ground state
+of some quasi-1D charge transfer systems including (EDO-TTF)\textsubscript{2}PF\textsubscript{6}.
+%
+This is achieved by considering a Hamiltonian~$\hat{H}$ that accounts for on-site (Hubbard)
+and off-site or nearest-neighbour (extended Hubbard) electron--electron Coulomb repulsion and
+on-site (Holstein) and off-site (Peierls) electron--phonon coupling.
+%
+One formulation of this extended `Peierls-Holstein-Hubbard Hamiltonian' from Ref.~\cite{Yonemitsu2007} is
+%
+\begin{equation}
+ \begin{aligned}
+   \hat{H}_\mathrm{PHH} & =
+    \hat{T} + \hat{H}_\mathrm{Hub} + \hat{H}_\mathrm{ex-Hub} + \hat{H}_\mathrm{Pei} + \hat{H}_\mathrm{Hol}
+ \end{aligned}
+\end{equation}
+%
+and
+%
+\begin{equation}
+ \begin{aligned}
+   \hat{T} & = - \sum_{\langle i, j \rangle, \sigma} t_\mathrm{Pei}
+     \left( \hat{c}_{i, \sigma}^\dagger \hat{c}_{j, \sigma} +  \hat{c}_{j, \sigma}^\dagger \hat{c}_{i, \sigma} \right) \\
+   \hat{H}_\mathrm{Hub} & = U \sum_i \hat{n}_{i, \uparrow} \hat{n}_{i, \downarrow} \\
+   \hat{H}_\mathrm{ex-Hub} & = V \sum_{\langle i, j \rangle} \hat{n}_i \hat{n}_j \\
+   \hat{H}_\mathrm{Pei} & = \frac{1}{2} K_\mathrm{Pei} \sum_i \left( u_j - u_i \right)^2 + \frac{2 K_\mathrm{Pei}}{\omega_\mathrm{Pei}^2} \sum_i \dot{u}_i^2 \\
+   \hat{H}_\mathrm{Hol} & = \frac{1}{2} K_\mathrm{Hol} \sum_i v_i^2 + \frac{K_\mathrm{Hol}}{2 \omega_\mathrm{Hol}^2} \sum_i \dot{u}_i^2 - g_\mathrm{Hol} \sum_i v_i \left( \hat{n}_i - \frac{1}{2} \right)
+ \end{aligned}
+\end{equation}
+%
+where $\hat{T}$ is the kinetic energy of the electrons hopping from one lattice site~$i$ to another~$j$;
+$\hat{c}_{i, \sigma}^\dagger, \hat{c}_{i, \sigma}, \hat{n}_{i, \sigma}$
+are the creation, annihilation, and number operators for an electron with spin~$\sigma$ at lattice site~$i$;
+$\hat{n}_i = \sum \limits_\sigma \hat{n}_{i, \sigma}$;
+$t_\mathrm{Pei} = t - g_\mathrm{Pei} \left( u_j - u_i\right)$ is the electron hopping energy between lattice sites~$i, j$
+modulated by Peierls-type distortions;
+$u_i, v_i$ are the displacement from equilibrium and the amplitude of the deformation (or internal vibrational mode)
+of the molecule at lattice site~$i$;
+$g_\mathrm{A}, K_\mathrm{A}, \omega_\mathrm{A}$ are the strengths, elastic constants, and bare phonon frequencies
+of the Peierls-type and Holstein-type electron--phonon interaction;
+$U, V$ are the strengths of the on-site and off-site (nearest-neighbour) electron--electron Coulomb repulsion.
+
+In Ref.~\cite{Yonemitsu2007}, a related term $\hat{H}_\mathrm{a}$ is added to include the effect of anion displacement,
+allowing the model to reproduce time-dependent dynamics induced by photoexcitation:
+%
+\begin{equation}
+ \begin{aligned}
+   \hat{H}_\mathrm{PHH} & \rightarrow \hat{H}_\mathrm{PHH} + \hat{H}_\mathrm{a} \\
+   \hat{H}_\mathrm{a} & =
+    \frac{1}{2} K_\mathrm{a} \sum_l w_l^2 + \frac{K_\mathrm{a}}{2 \omega_\mathrm{a}^2} \sum_l \dot{w}_l^2 - g_\mathrm{a} \sum_l w_l \left( \hat{n}_{2 l - 1} + \hat{n}_{2 l} - 1 \right)
+ \end{aligned}
+\end{equation}
+%
+where $w_l$ is the displacement from equilibrium of the $l$th anion;
+$g_\mathrm{a}, K_\mathrm{a}, \omega_\mathrm{a}$ are the corresponding electron--phonon coupling strength, elastic constant,
+and bare phonon frequency.

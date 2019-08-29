@@ -1,0 +1,86 @@
+\chapter{Derivation of the Mott-Bethe Formula}
+\label{ap: MottBethe}
+
+The Mott-Bethe formula is often used to convert in between
+the X-ray scattering factor
+%
+\begin{equation}
+  f_\text{X}(\boldsymbol{q}) = \int n_\text{e}(\boldsymbol{r}) \mathrm{e}^{ - \mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r}} \mathrm{d}^3 r
+\end{equation}
+%
+and the electron scattering factor
+%
+\begin{equation}
+  f_\text{e}(\boldsymbol{q}) = - \frac{m_\text{e}}{2 \unslant[-.2]\pi \hbar^2} \int U(\boldsymbol{r}) \mathrm{e}^{ - \mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r}} \mathrm{d}^3 r
+\end{equation}
+%
+for the purpose of calculations.
+However, the source of this handy relationship is rarely stated.
+Thus, for the completeness of this thesis,
+the derivation for this equation is described below,
+as laid out in Ref.~\cite{LandauLifshitzBook}.
+
+During a scattering event with an atom, X-rays interact mainly with
+the electron number density $n_\text{e}(\boldsymbol{r})$
+while electrons are deflected by the electrostatic potential $\phi(\boldsymbol{r})$
+caused by the bound electrons and the nucleus.
+%
+A starting point to relate these two quantities is the Poisson Equation
+and the total atomic charge density~$\rho(\boldsymbol{r})$,
+%
+\begin{equation}
+  \nabla^2 \phi(\boldsymbol{r}) = -\frac{\rho(\boldsymbol{r})}{\epsilon_0}
+\end{equation}
+%
+in which their Fourier transforms are inserted,
+%
+\begin{equation}
+  \begin{aligned}
+    \nabla^2 \left( \int \phi_{\boldsymbol{q}} \mathrm{e}^{ \mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r} } \mathrm{d}^3 q \right)
+      & = -\frac{1}{\epsilon_0} \left( \int \rho_{\boldsymbol{q}} \mathrm{e}^{\mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r}} \mathrm{d}^3 q \right) \\
+    \int \phi_{\boldsymbol{q}} \left( -q^2 \mathrm{e}^{\mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r}} \right) \mathrm{d}^3 q
+      & = -\frac{1}{\epsilon_0} \int \rho_{\boldsymbol{q}} \mathrm{e}^{\mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r}} \mathrm{d}^3 q \\
+    \phi_{\boldsymbol{q}} & = \frac{1}{\epsilon_0 q^2} \rho_{\boldsymbol{q}}
+  \end{aligned}
+\end{equation}
+%
+Therefore,
+%
+\begin{equation}
+  \begin{aligned}
+    \int \phi(\boldsymbol{r}) \mathrm{e}^{ - \mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r}} \mathrm{d}^3 r
+      & = \frac{1}{\epsilon_0 q^2} \int \rho(\boldsymbol{r}) \mathrm{e}^{ - \mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r}} \mathrm{d}^3 r
+  \end{aligned}
+\end{equation}
+%
+On the right side, $\rho(\boldsymbol{r})$ can be expanded into a point-like nuclear charge density
+$\rho_\text{N}(\boldsymbol{r}) = Z e \delta^3(\boldsymbol{r})$ and an extended electronic charge density $\rho_\text{e}(\boldsymbol{r}) = e n_\text{e}(\boldsymbol{r})$,
+%
+\begin{equation}
+  \begin{aligned}
+    \frac{1}{\epsilon_0 q^2} \int \rho(\boldsymbol{r}) \mathrm{e}^{\mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r}} \mathrm{d}^3 r
+      & = \frac{1}{\epsilon_0 q^2} \int \left( Z e \delta^3(\boldsymbol{r}) - e n_\text{e}(\boldsymbol{r}) \right) \mathrm{e}^{\mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r}} \mathrm{d}^3 r \\
+      & = \frac{e}{\epsilon_0 q^2} \left( Z - \int n_\text{e}(\boldsymbol{r}) \mathrm{e}^{\mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r}} \mathrm{d}^3 r \right) \\
+      & = \frac{e}{\epsilon_0 q^2} \left( Z - f_\text{X}(\boldsymbol{q}) \right)
+  \end{aligned}
+\end{equation}
+%
+where $Z$ is the atomic number of the atom and $n_\text{e}(\boldsymbol{r})$ is the number density of the bound electrons.
+%
+On the left side, recall that $U(\boldsymbol{r}) = -e \phi(\boldsymbol{r})$,
+%
+\begin{equation}
+  \begin{aligned}
+    \int \phi(\boldsymbol{r}) \mathrm{e}^{ - \mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r}} \mathrm{d}^3 r
+      & = -\frac{1}{e} \int U(\boldsymbol{r}) \mathrm{e}^{ - \mathrm{i} \boldsymbol{q} \cdot \boldsymbol{r}} \mathrm{d}^3 r \\
+      & = \frac{2 \unslant[-.2]\pi \hbar^2}{m_\text{e} e} f_\text{e}(\boldsymbol{q})
+  \end{aligned}
+\end{equation}
+%
+By recombining the result from the left and right sides, the Mott-Bethe formula is thus recovered:
+%
+\begin{equation}
+  \begin{aligned}
+    f_\text{e}(\boldsymbol{q}) = \frac{m_\text{e} e^2}{2 \unslant[-.2]\pi \hbar^2 \epsilon_0 q^2} \left( Z - f_\text{X}(\boldsymbol{q}) \right)
+  \end{aligned}
+\end{equation}

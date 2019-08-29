@@ -1,0 +1,177 @@
+\chapter{Sample Excitation Condition in SCO Literature}
+\label{ap: sco-exc}
+
+In Section~\ref{sec: SCO-photo-4}, high sample excitation condition is suggested
+as a possible explanation for the apparent conflict between the results
+described by authors using different experimental techniques.
+Table~\ref{tab: SCO-exc} contains a tabulation of the values of some key parameters
+from some select works from SCO literature.
+For reference, an extended version is included herein.
+%
+The peak fluence~$f$ and peak intensity~$I$ of the pump-laser pulse
+are defined as
+%
+\begin{equation}
+  \begin{aligned}
+    f & = 4 \ln(2) \frac{E}{\unslant[-.2]\pi w^2} \\
+    I & = \frac{f}{\tau}
+  \end{aligned}
+\end{equation}
+%
+where $\lambda, E, \tau, w$ are the centre wavelength, pulse energy,
+pulse duration~(FWHM), and beamwidth~(FWHM) on the sample.
+%
+From the Beer-Lambert law,
+the excitation fraction $\eta_\text{exc}$ as a function of optical path length~$l$
+is given by
+%
+\begin{equation}
+  \begin{aligned}
+    \eta_\text{exc}(l) & = \frac{f}{h c / \lambda}
+      \frac{\Phi}{c_\text{abs} N_\text{A} l} \left( 1 - 10^{-l/L_\text{exc}}\right)
+  \end{aligned}
+\end{equation}
+%
+where $L_\text{exc} = 1/(\epsilon_\text{abs} c_\text{abs})$ and
+$h c / \lambda$ are the excitation depth and photon energy of the pump pulse.
+$\epsilon_\text{abs}$, $c_\text{abs}$, $\Phi \approx 1$ are
+the sample excitation depth, molar absorption coefficient, molar concentration,
+and quantum yield of the excitation;
+$N_\text{A} \approx 6.022 \times 10^{23}$~mol$^{-1}$ is the Avogadro constant.
+%
+At the surface of the sample,
+%
+\begin{equation}
+  \begin{aligned}
+    \eta_\text{exc}^0 & = \lim \limits_{l \to 0} \eta_\text{exc}(l) \\
+      & = \frac{f}{h c / \lambda}
+        \frac{\Phi}{c_\text{abs} N_\text{A}}
+        \lim \limits_{l \to 0} \frac{1 - 10^{-l/L_\text{exc}}}{l} \\
+      & = \frac{f}{h c / \lambda} \frac{\Phi}{c_\text{abs} N_\text{A}}
+        \frac{\ln(10)}{L_\text{exc}}
+  \end{aligned}
+\end{equation}
+
+% Tables:
+\begin{table}[htp!]
+  \centering
+  {\renewcommand*{\arraystretch}{1.5}
+    \begin{tabular}{ C{1cm}  C{2cm} C{2.65cm} C{2.75cm} C{1cm} }
+      \toprule
+      \multirow{2}{*}{Work} & \multirow{2}{*}{Technique}
+        & \multirow{2}{*}{
+          \begin{minipage}[c]{2.5cm} \centering Peak Fluence (mJ/cm$^2$) \end{minipage}}
+        & \multirow{2}{*}{
+         \begin{minipage}[c]{2.6cm} \centering Peak Intensity (GW/cm$^2$) \end{minipage}}
+        & \multirow{2}{*}{$\eta_\text{exc}^0$} \\
+        & & & & \\
+      \midrule
+      \cite{Lorenc2009}     & TR-XRD    & 15     & 150    & ?     \\
+      \cite{Collet2012a}    & TR-XRD    & 15     & ?      & ?     \\
+      \cite{Collet2012b}    & TR-XRD    & 15     & 150    & ?     \\
+      \cite{Lorenc2012}     & TR-XRD    & 10     & 91     & ?     \\
+      \cite{Marino2015}     & TR-XRD    & 0.7    & ?      & ?     \\
+      \cite{Bertoni2016b}   & TR-XRD    & 4      & ?      & ?     \\
+      \cite{Freyer2013}     & TR-XRD    & 32     & 800    & ?     \\
+      \bottomrule
+  \end{tabular}
+  }
+  \caption{Sample excitation condition for works in SCO literature (part~1).}
+  \label{tab: SCO-exc-app-1}
+\end{table}
+
+% Abbreviation: TR-XRD = time-resolved X-ray diffraction.
+
+\begin{table}[htp!]
+  \centering
+  {\renewcommand*{\arraystretch}{1.5}
+    \begin{tabular}{ C{1cm}  C{2cm} C{2.65cm} C{2.75cm} C{1cm} }
+      \toprule
+      \multirow{2}{*}{Work} & \multirow{2}{*}{Technique}
+        & \multirow{2}{*}{
+          \begin{minipage}[c]{2.5cm} \centering Peak Fluence (mJ/cm$^2$) \end{minipage}}
+        & \multirow{2}{*}{
+         \begin{minipage}[c]{2.6cm} \centering Peak Intensity (GW/cm$^2$) \end{minipage}}
+        & \multirow{2}{*}{$\eta_\text{exc}^0$} \\
+        & & & & \\
+      \midrule
+      \cite{Monat2000}      & TA     & 0.6    & ?      & 0.01  \\
+      \cite{Smeigh2008}     & FSRS   & ?      & ?      & ?     \\
+      \cite{Gawelda2007a}   & FLUPS  & 2.8    & 70.6   & 0.06  \\
+      \cite{Gawelda2007a}   & TA     & 80     & 2724.9 & 1.9   \\
+      \cite{Consani2009}    & TA     & 38.1   & 846.7  & 1.2   \\
+      \cite{Aubock2015}     & UV TA  & 0.7    & 18.2   & 0.01  \\
+      \cite{Aubock2015}     & Vis TA & 2.2    & 54.7   & 0.07  \\
+      \cite{Tribollet2011}  & TA     & ?      & ?      & ?     \\
+      \cite{Galle2013}      & TA     & ?      & ?      & ?     \\
+      \cite{Moisan2008}     & TA     & 4      & 40     & ?     \\
+      \cite{Lorenc2009}     & TA     & 15     & 150    & ?     \\
+      \cite{Tissot2011}     & TA     & 1      & 7      & ?     \\
+      \cite{Collet2012a}    & TA     & 10     & 222    & ?     \\
+      \cite{Bertoni2012}    & TA     & 4.5    & 64     & ?     \\
+      \cite{Kaszub2013}     & TA     & 25     & 500    & ?     \\
+      \cite{Marino2014}     & TA     & 11     & 220    & ?     \\
+      \cite{Bertoni2016a}   & TA     & ?      & ?      & ?     \\
+      \cite{Bertoni2016b}   & TA     & 4      & ?      & ?     \\
+      \cite{Marino2015}     & TA     & 1.4    & ?      & ?     \\
+      \cite{Marino2016}     & TA     & 40     & 1000   & 4.6   \\
+      \cite{Parpiiev2017}   & TR     & 0.35   & 2.2    & 0.02  \\
+      \cite{Zerdane2017}    & TA     & 0.4    & 5.7    & ?     \\
+      \cite{Zerdane2017}    & TA     & 0.42   & 5.9    & ?     \\
+      \cite{Moguilevski2016} & PES   & 17.6   & 293    & 1.4   \\
+      \bottomrule
+    \end{tabular}
+  }
+  \caption{Sample excitation condition for works in SCO literature (part~2).}
+  \label{tab: SCO-exc-app-2}
+\end{table}
+
+% Abbreviations: FLUPS = fluorescence up-conversion spectroscopy,
+% TA = transient absorption, TR = transient reflectivity, PES = photoemission spectrocopy.
+
+\begin{table}[htp!]
+  \centering
+  {\renewcommand*{\arraystretch}{1.5}
+    \begin{tabular}{ C{1cm}  C{2cm} C{2.65cm} C{2.75cm} C{1cm} }
+      \toprule
+      \multirow{2}{*}{Work} & \multirow{2}{*}{Technique}
+        & \multirow{2}{*}{
+          \begin{minipage}[c]{2.5cm} \centering Peak Fluence (mJ/cm$^2$) \end{minipage}}
+        & \multirow{2}{*}{
+         \begin{minipage}[c]{2.6cm} \centering Peak Intensity (GW/cm$^2$) \end{minipage}}
+        & \multirow{2}{*}{$\eta_\text{exc}^0$} \\
+        & & & & \\
+      \midrule
+      \cite{Khalil2006}              & XAS    & 123.6   & 1235.6 & 4.76  \\
+      \cite{Gawelda2007b}            & XAS    & 180     & 1800   & 4.2  \\
+      \cite{Sato2009}                & XAS    & 245.1   & 1634   & 7.6   \\
+      \cite{Bressler2009}            & XAS    & ?       & ?      & ?     \\
+      \cite{Vanko2010}               & XES    & 294     & 2942   & 6.8  \\
+      \cite{Huse2010}                & XAS    & 15.7    & 224    & 2.20  \\
+      \cite{Huse2011}                & XAS    & 3       & 43     & 0.4  \\
+      \cite{Lima2011}                & XAS    & 13--400 & 1.3--40 & 1--32 \\
+      \cite{Haldrup2012}             & XXX    & 19.6    & 1.96   & 1.6  \\
+      \cite{Vanko2013}               & XES    & 8.2     & 29     & 0.6  \\
+      \cite{Lemke2013}               & XAS    & 567.3   & 11346  & 13.10 \\
+      \cite{Cammarata2014}           & XAS    & 1.8     & 36     & ?     \\
+      \cite{Zhang2014}               & XES    & 120     & 1714   & 9.4  \\
+      \cite{Canton2014}              & XAS    & ?       & ?      & ?     \\
+      \cite{XZhang2015}              & XAS    & 100     & 20     & 12 \\
+      \cite{Vanko2015}               & XES    & 19.6    & 1.96   & 2.4  \\
+      \cite{Marino2016}              & XAS    & 50      & 1000   & 5.8   \\
+      \cite{VanKuiken2016}           & XAS    & 4.2     & 42     & 0.1  \\
+      \cite{Haldrup2016}             & XX     & 785     & 15700  & 18 \\
+      \cite{Biasin2016}              & XDS    & 275     & 3922   & 2.1  \\
+      \cite{Lemke2017}               & XAS    & 220     & 4400   & 17.51 \\
+      \cite{March2017}               & XES    & 30      & 3      & 3.7  \\
+      \cite{Zhang2017}               & XES    & 0.1     & 1.7    & 0.003 \\
+      \cite{Kjaer2017}               & XES    & 0.1     & 2.1    & 0.004 \\
+      \bottomrule
+  \end{tabular}
+  }
+  \caption{Sample excitation condition for works in SCO literature (part~3).}
+  \label{tab: SCO-exc-app-3}
+\end{table}
+
+% XAS = X-ray absorption spectroscopy,
+% XES = X-ray emission spectroscopy, XDS = X-ray diffuse scattering,

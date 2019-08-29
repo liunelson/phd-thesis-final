@@ -1,0 +1,165 @@
+
+\chapter{Theory of Spin Crossover}
+\label{ap: sco}
+
+In Section~\ref{sec: SCO-theory}, the theory of thermal and photoinduced
+spin crossover is discussed.
+%
+In particular, the non-adiabatic multiphonon relaxation model
+by Buhks et al~\cite{Buhks1980} is mentioned in the context of
+the LS$\leftarrow$HS relaxation following LIESST.
+%
+Here, this model is described in more detail for reference.
+
+Following the lead of Hauser in Ref.~\cite{SCO-II},
+consider Fermi's Golden Rule~\cite{Dirac1927, Fermi1950},
+%
+\begin{equation}
+  \begin{aligned}
+    w_{i \rightarrow f} & = \frac{2 \unslant[-.2]\pi}{\hbar} |V_{i f}|^2 \rho_f
+  \end{aligned}
+  \label{eq: fermi-golden}
+\end{equation}
+%
+where $w_{i \rightarrow f}$ is the probability of transition from an initial state~$i$
+(in the $m$-th vibrational level of the HS state)
+to a final state~$f$ (in the $m^\prime$-th vibrational level of the LS state),
+$|V_{i f}|^2$ is the matrix element of the perturbing potential
+that couples states $i$ and $f$, and $\rho_f$ is the density of states at $f$.
+
+Given that the perturbing potential is
+the spin--orbit interaction~$\hat{H}_\text{SO} = \zeta \hat{\boldsymbol{L}} \cdot \hat{\boldsymbol{S}}$,
+the coupling matrix element can be expanded as
+%
+\begin{equation}
+  \begin{aligned}
+    |V_{i f}|^2 & = |\langle \Psi_f | \hat{H}_\text{SO} | \Psi_i \rangle|^2 \\
+      & = |\langle \psi_\text{HS} | \hat{H}_\text{SO} | \psi_\text{LS} \rangle|^2
+      | \langle \chi_{m^\prime} | \chi_m \rangle |^2
+  \end{aligned}
+\end{equation}
+%
+where $| \psi \rangle, | \chi \rangle $ are the electronic and vibrational parts
+of the total wavefunction~$| \Psi \rangle$ and,
+according to the Condon~approximation, $| \Psi_i \rangle = | \psi_\text{HS} \rangle | \chi_m \rangle$
+and $| \Psi_f \rangle = | \psi_\text{LS} \rangle | \chi_{m^\prime} \rangle$.
+%
+To evaluate this quantity, consider that
+the electronic states are mixed to some degree
+due to the presence of the spin--orbit interaction~$\hat{H}_\text{SO}$
+and thus need to be expressed using first-order perturbation theory,
+%
+\begin{equation}
+  \begin{aligned}
+    | \psi_\text{LS} \rangle
+      & \approx | \psi_\text{LS}^{(0)} \rangle
+        + \sum_{j}
+          \frac{\langle \psi_j^{(0)} | \hat{H}_\text{SO} | \psi_\text{LS}^{(0)} \rangle}{E_\text{LS}^{(0)} - E_j^{(0)}} | \psi_j^{(0)} \rangle \\
+    \langle \psi_\text{HS} |
+      & \approx \langle \psi_\text{HS}^{(0)} |
+        + \sum_{j}
+          \frac{\langle \psi_\text{HS}^{(0)} | \hat{H}_\text{SO} | \psi_j^{(0)} \rangle}{E_\text{HS}^{(0)} - E_j^{(0)}} \langle \psi_j^{(0)} |
+  \end{aligned}
+\end{equation}
+%
+where the energy denominators are evaluated in
+the equilibrium nuclear configuration of the respective states.
+Then,
+%
+\begin{equation}
+  \begin{aligned}
+    \langle \psi_\text{HS} | \hat{H}_\text{SO} | \psi_\text{LS} \rangle
+      & = \langle \psi_\text{HS}^{(0)} | \hat{H}_\text{SO} | \psi_\text{LS}^{(0)} \rangle
+        + \sum_{j} \langle \psi_\text{HS}^{(0)} | \hat{H}_\text{SO} | \psi_j^{(0)} \rangle
+        \langle \psi_j^{(0)} | \hat{H}_\text{SO} | \psi_\text{LS}^{(0)} \rangle \\
+      & \quad \left( \frac{1}{E_\text{LS}^{(0)} - E_j^{(0)}} + \frac{1}{E_\text{HS}^{(0)} - E_j^{(0)}} \right) \\
+      & = 0 + \langle \mathrm{^5T_{2g}} | \hat{H}_\text{SO} | \mathrm{^3T_{1g}} \rangle
+        \langle \mathrm{^3T_{1g}} | \hat{H}_\text{SO} | \mathrm{^1A_{1g}} \rangle
+        \left( \frac{1}{\Delta E_\text{LI}^{(0)}} + \frac{1}{\Delta E_\text{HI}^{(0)}} \right)
+  \end{aligned}
+\end{equation}
+%
+where $\Delta E_\text{LI}^{(0)}, \Delta E_\text{HI}^{(0)}$ are the energy difference
+between the triplet intermediate state $\mathrm{^3T_{1g}}$ and the other states.
+From Ref.~\cite{Griffith1964}, $\mathrm{^3T_{1g}}$,
+with electronic configuration $\mathrm{(t_{2g})^5 (e_g^*)^1}$,
+is the only term which has non-vanishing spin--orbit matrix elements
+with both $\mathrm{^1A_{1g}}$ and $\mathrm{^5T_{2g}}$,
+%
+\begin{equation}
+  \begin{aligned}
+    \langle \mathrm{^5T_{2g}} | \hat{H}_\text{SO} | \mathrm{^1A_{1g}} \rangle
+      & = 0 \\
+    \langle \mathrm{^5T_{2g}} | \hat{H}_\text{SO} | \mathrm{^3T_{1g}} \rangle
+      & = - \sqrt{6} \zeta \\
+    \langle \mathrm{^3T_{1g}} | \hat{H}_\text{SO} | \mathrm{^1A_{1g}} \rangle
+      & = \sqrt{3} \zeta
+  \end{aligned}
+\end{equation}
+
+Assume that the LS and HS potentials are identical and harmonic of
+the same frequency~$\omega$, with the latter displaced energetically by $\Delta E_\text{HL}^{(0)}$ and
+configurationally by $\Delta Q_\text{HL} = \sqrt{6} \Delta r_\text{HL}$
+along a single internal vibrational coordinate~$Q$, namely the totally symmetric metal--ligand stretch mode.
+Then, energy conservation requires simply $m^\prime = m + n$,
+where $n = \frac{\Delta E_\text{HL}^{(0)}}{\hbar \omega}$ is the reduced energy gap between the LS and HS states,
+and the density of states~$\rho_f$ becomes $\frac{g_f}{\hbar \omega}$,
+where $g_f = 1$ is the degeneracy of the final electronic state.
+
+To obtain the LS$\leftarrow$HS relaxation rate constant~$k_\text{HL}(T)$,
+Eq.~\eqref{eq: fermi-golden} is combined with those above and
+ensemble-averaged over all $m$,
+%
+\begin{equation}
+  \begin{aligned}
+    k_\text{HL}(T)
+      & = \frac{2 \unslant[-.2]\pi}{\hbar^2 \omega}
+        |\langle \psi_\text{HS} | \hat{H}_\text{SO} | \psi_\text{LS} \rangle|^2 \bar{F}_n(T)
+  \end{aligned}
+\end{equation}
+%
+where $\bar{F}_n$ is the ensemble average of the Franck-Condon factor~$F_{m n}$,
+%
+\begin{equation}
+  \begin{aligned}
+    F_{m n}(T) & = | \langle \chi_{m + n} | \chi_m \rangle |^2 \\
+    \bar{F}_n(T)
+      & = \frac{\sum \limits_m F_{m n}(T) \mathrm{e}^{-m \hbar \omega / k_\text{B} T}}{\sum \limits_m \mathrm{e}^{-m \hbar \omega / k_\text{B} T}}
+  \end{aligned}
+\end{equation}
+
+% Sousa, de Graaf calculations
+In a similar procedure, Sousa et~al~\cite{Sousa2013} have evaluate
+more spin--orbit coupling matrix elements using high-level quantum-chemical methods.
+%
+Table~\ref{tab: sco-so} shows some of these computational results.
+%
+\begin{table}[ht!]
+  \centering
+  {\renewcommand*{\arraystretch}{1.5}
+    \begin{tabular}{| c | c | c c c c c c c c |}
+      \cline{3-10}
+      \multicolumn{2}{c|}{} & \multicolumn{8}{c |}{$\psi_f$} \\
+      \cline{3-10}
+      \multicolumn{2}{c|}{} & $\mathrm{^1 A_{1g}}$
+        & $\mathrm{^1 T_{1g}}$ & $\mathrm{^1 MLCT}$ & $\mathrm{^3 T_{1g}}$
+        & $\mathrm{^3 T_{2g}}$ & $\mathrm{^3 MLCT}$ & $\mathrm{^5 T_{2g}}$ & $\mathrm{^5 MLCT}$ \\
+      \hline
+      \multirow{8}{*}{$\psi_i$} & $\mathrm{^1 A_{1g}}$ &  &  &  & 527.7 & 83.7 & 81.6 & 0 & 0 \\
+       & $\mathrm{^1 T_{1g}}$ &  &  &  & 75.5 & 131.4 & 164.7 & 0 & 0 \\
+       & $\mathrm{^1 MLCT}$ &  &  &  & 96.0 & 214.3 & 199.9 & 0 & 0 \\
+       & $\mathrm{^3 T_{1g}}$ & 527.7 & 75.5 & 96.0 &  &  &  & 417.7 &  \\
+       & $\mathrm{^3 T_{2}}$ & 83.7 & 131.4 & 214.3 &  &  &  & 219.9 &  \\
+       & $\mathrm{^3 MLCT}$ & 81.6 & 164.7 & 199.9 &  &  &  & 6.2 & 344.3 \\
+       & $\mathrm{^5 T_{2g}}$ & 0 & 0 & 0 & 417.7 & 219.9 & 6.2 &  &  \\
+       & $\mathrm{^5 MLCT}$ & 0 & 0 & 0 &  &  & 344.3 &  & \\
+      \hline
+    \end{tabular}
+  }
+  \caption{Select spin--orbit coupling matrix elements
+    $\langle \psi_f | \hat{H}_\text{SO} | \psi_i \rangle$
+    of $\mathrm{[Fe^{II}(bpy)_3]^{2+}}$ in the equilibrium nuclear configuration
+    of the $\mathrm{^1 A_{1g}}$ LS state, calculated at the CASSCF/CASPT2 level~\cite{Sousa2013}.
+  }
+  \label{tab: sco-so}
+\end{table}
