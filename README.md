@@ -21,9 +21,9 @@ Leveraging the ultrabright femtosecond electron source presently available, larg
 ```bibtex
 @phdthesis{LaiChungLiu-thesis-2019, 
   author = {LaiChung Liu},
-  title = {Chemistry in Action: Making Molecular Movies with Ultrafast Electron Diffraction and Data Science},
+  title  = {Chemistry in Action: Making Molecular Movies with Ultrafast Electron Diffraction and Data Science},
   school = {University of Toronto},
-  year = {2019}
+  year   = {2019}
 }
 ```
 
