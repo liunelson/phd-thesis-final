@@ -2,7 +2,7 @@
 
 This repository contains all the files needed to compile the final version of my Ph.D. thesis in physics, which was submitted to the digital library repository of the [University of Toronto](https://www.utoronto.ca) in 2019. The final PDF output can be downloaded [here](http://hdl.handle.net/1807/68134) (293 pages, 114 MB).
 
-This thesis was written using the [LaTeX template](https://ctan.org/tex-archive/macros/latex/contrib/ut-thesis) `ut-thesis.cls` provided by the School of Graduate Studies at the University of Toronto. At the time of submission, it conformed to all of their [formatting requirements](https://sgs.utoronto.ca/academic-progress/program-completion/formatting).
+This thesis was written using the [LaTeX template](https://ctan.org/tex-archive/macros/latex/contrib/ut-thesis) `ut-thesis.cls` provided by the School of Graduate Studies at the University of Toronto and compiled using [MiKTeX](https://miktex.org). At the time of submission, it conformed to all of their [formatting requirements](https://sgs.utoronto.ca/academic-progress/program-completion/formatting).
 
 The files in `/figures/` are vector images that were made in [MATLAB](https://www.mathworks.com/products/matlab.html) and [Inkscape](https://inkscape.org/) and then exported as PDF.
 
