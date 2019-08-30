@@ -6,9 +6,9 @@ This thesis was written using the [LaTeX template](https://ctan.org/tex-archive/
 
 The files in `/figures/` are vector images that were made in [MATLAB](https://www.mathworks.com/products/matlab.html) and [Inkscape](https://inkscape.org/) and then exported as PDF.
 
-## Abstract
-
 ![Thesis cover image](thesis_cover.png)
+
+## Abstract
 
 A long-held thought experiment of science is the direct observation of the motions of atoms and molecules as they undergo chemical reactions and phase transitions. The advent of microscopy and diffraction beyond the visible spectrum of light — using X-rays, electrons, and neutrons — has since enabled such atomic-level elucidation of the structure of matter in the steady state.
 
