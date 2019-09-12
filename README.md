@@ -1,6 +1,6 @@
 # Lai Chung Liu's Ph.D. Thesis
 
-This repository contains all the files needed to compile the final version of my Ph.D. thesis in physics, which was submitted to the digital library repository of the [University of Toronto](https://www.utoronto.ca) in 2019. The final PDF output can be downloaded [there](http://hdl.handle.net/1807/68134) (293 pages, 114 MB).
+This repository contains all the files needed to compile the final version of my Ph.D. thesis in physics, which was submitted to the digital library repository of the [University of Toronto](https://www.utoronto.ca) in 2019. The final PDF output can be downloaded there or [here temporarily](https://1drv.ms/b/s!AsiTQ4FuC9TDhroVUbr-pqiXCgETrg?e=n8JbQh) (293 pages, 114 MB).
 
 This thesis was written using the [LaTeX template](https://ctan.org/tex-archive/macros/latex/contrib/ut-thesis) `ut-thesis.cls` provided by the School of Graduate Studies at the University of Toronto and compiled using [MiKTeX](https://miktex.org). At the time of submission, it conformed to all of their [formatting requirements](https://sgs.utoronto.ca/academic-progress/program-completion/formatting).
 
