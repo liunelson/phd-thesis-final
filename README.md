@@ -16,7 +16,7 @@ Recently, time-resolved techniques have finally enabled the making of the titula
 
 Leveraging the ultrabright femtosecond electron source presently available, large overdetermining time-series maps of reciprocal space were measured and structurally refined to track the individual atomic motions that lead to each photoproduct: two transient metallic phases, a ring-closed isomer, and two expanded high-spin states. In all cases, a dramatic and heretofore unknown reduction in dimensionality was found, whereby the photoinduced structural dynamics is governed by key reaction modes that are much fewer in number than the degrees of freedom expected of the respective molecular systems. This insight — along with the experiments and methods presented herein — should find application in uncovering the physics of reduced dimensionality as a solution to the problem of how chemistry scales with complexity. This work lays the foundation to recast chemistry in terms of reduced reaction modes, unifying structure and dynamics as a new conceptual basis for chemistry.
 
-## BibTex Reference
+## [BibTeX](http://www.bibtex.org) Reference
 
 ```bibtex
 @phdthesis{LaiChungLiu-thesis-2019, 
